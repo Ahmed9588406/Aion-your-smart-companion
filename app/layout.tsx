@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 
 import './globals.css'
+import { ThemeProvider } from '@/components/themes-provider'
 
 
 
@@ -19,9 +20,10 @@ export default function RootLayout({
       <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
         <body>
-          
+          <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             
             {children}
+          </ThemeProvider>
             
          
         </body>
