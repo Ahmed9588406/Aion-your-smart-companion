@@ -3,6 +3,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 
 import './globals.css'
 import { ThemeProvider } from '@/components/themes-provider'
+import { cn } from '@/lib/utils'
 
 
 
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
       <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body>
+        <body className={cn("bg-secondary")}>
           <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
             
             {children}
